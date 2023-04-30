@@ -1,0 +1,62 @@
+
+body{
+  text-align: center;
+  width: 1000px;
+}
+
+header{
+  width: 1000px;
+  height: 120px;
+}
+
+.header_logo{
+  background-color: #add8ed;
+  height: 120px;
+  width: 200px;
+  float :left;
+}
+
+.header_user{
+  background-color: #87ceeb;
+  height: 60px;
+  width: 800px;
+  float :left;
+  text-align: right;
+  line-height: 60px;
+}
+
+.header_lastlogin{
+  background-color: #0fffff;
+  height: 60px;
+  width: 800px;
+  float :left;
+  text-align: right;
+  line-height: 60px;
+}
+
+main{
+  width: 1000px;
+  margin: 10px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+table th{
+  background-color: #87ceeb;
+}
+
+table td{
+  background-color: #e0ffff;
+  text-align: left;
+}
+
+footer{
+  background-color: #00ced1;
+  height: 120px;
+  width: 1000px;
+}
+
+.footer_logo{
+  text-align: left;
+}
