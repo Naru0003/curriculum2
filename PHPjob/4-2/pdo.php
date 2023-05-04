@@ -12,7 +12,8 @@ define('DB_PASSWORD', 'root');
 define('PDO_DSN', 'mysql:host=localhost;charset=utf8;dbname='.DB_DATABASE);
 
 function connect() {
-  $dsn = "mysql:host=localhost;dbname=DB_DATABASE;charset=utf8";
+// ファイル内で使用しないのでいらない↓
+// $dsn = "mysql:host=localhost;dbname=DB_DATABASE;charset=utf8";
     try {
         // PDOインスタンスの作成
         $pdo = new PDO(PDO_DSN, DB_USERNAME, DB_PASSWORD);

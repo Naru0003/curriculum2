@@ -1,6 +1,7 @@
 <?php
 // 作成したpdo.phpを読み込む
-require_once('pdo.php');
+// ↓はgetData.phpで使うものなのでここでは読まなくていい
+// require_once('pdo.php');
 require_once('getData.php');
 
 // getDataクラスのインスタンスを作成
@@ -49,45 +50,42 @@ $post_data = $get_data->getPostData();
 
 <main>
   <div class="table">
-    <?php
-    try{
-        // テーブルタイトル
-        echo "<table>\n";
-        echo "<thead><tr>\n";
-        echo "<th>記事ID</th><th>タイトル</th><th>カテゴリ</th><th>本文</th><th>投稿日</th>\n";
-        echo "</tr></thead>\n";
-
-        // テーブル中身
-        echo "<tbody>\n";
-        foreach ($post_data as $row) {
-          echo "<tr>\n";
-          echo "<td>".$row['id']."</td>\n";
-          echo "<td>".$row['title']."</td>\n";
-          echo "<td>";
-          switch($row['category_no']){
-            case 1:
-              echo "食事";
-              break;
-            case 2:
-              echo "旅行";
-              break;
-            default:
-              echo "その他";
-              break;
-          }
-          echo "</td>\n";
-          echo "<td>".$row['comment']."</td>\n";
-          echo "<td>".$row['created']."</td>\n";
-          echo "</tr>\n";
-        }
-          echo "</tbody>\n";
-          echo "</table>\n";
-    }
-    catch(Exception $e) {
-      echo 'Error: ' . $e->getMessage();
-      die();
-    }
-    ?>
+    <table>
+      <thead>
+        <tr>
+          <th>記事ID</th>
+          <th>タイトル</th>
+          <th>カテゴリ</th>
+          <th>本文</th>
+          <th>投稿日</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php foreach ($post_data as $row) : ?>
+          <tr>
+            <td><?= $row['id'] ?></td>
+            <td><?= $row['title'] ?></td>
+            <td>
+            <?php
+                switch($row['category_no']){
+                  case 1:
+                    echo "食事";
+                    break;
+                  case 2:
+                    echo "旅行";
+                    break;
+                  default:
+                    echo "その他";
+                    break;
+                }
+              ?>
+            </td>
+            <td><?= $row['comment'] ?></td>
+            <td><?= $row['created'] ?></td>
+          </tr>
+        <?php endforeach; ?>
+      </tbody>
+    </table>
   </div>
 </main>
 
