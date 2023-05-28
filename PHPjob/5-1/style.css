@@ -1,0 +1,97 @@
+body.login-page h1 {
+  display: inline-block;
+  margin-right: 50px;
+}
+
+.submit-button {
+  background-color: #0067c0;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  width: 200px;
+}
+
+.login-button{
+  display: inline-block;
+  background-color: 	#00ada9;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.register-button{
+  background-color: #0067c0;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.logout-button{
+  background-color: gray;
+  color: white;
+  margin: 10px;
+  margin-bottom: 30px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.delete-button {
+  background-color: red;
+  color: white;
+  padding: 5px 10px;
+  text-decoration: none;
+  border-radius: 3px;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+table th,
+table td {
+  border: 1px solid 	#B1B3B6;
+  padding: 5px;
+}
+
+table th{
+  background-color: lightgrey;
+  font-weight: normal;
+  width: 200px;
+  height: 50px;
+}
+
+table td{
+  width: 200px;
+  height: 50px;
+  text-align: center;
+}
+
+#title,
+#date {
+  width: 300px;
+  height: 30px;
+  margin: 5px;
+}
+
+select[name="stock"] {
+  width: 250px;
+  height: 30px;
+  margin: 5px;
+}
+
+#register{
+  margin: 5px;
+}
+input[name="name"],
+input[name="pass"]{
+  width: 300px;
+  height: 30px;
+}
