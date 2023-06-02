@@ -25,7 +25,7 @@ try {
   exit();
 }
 } catch (Exception $e) {
-header('Location: login.php');
+header('Location: bookList.php');
 exit();
 }
 ?>
@@ -44,13 +44,15 @@ exit();
 
 <input type="text" name="title" id="title" placeholder="タイトル">
 <br>
-<input type="text" name="date" id="date" placeholder="発売日"><br>
+<input type="date" name="date" id="date"><br>
 在庫数<br>
 <select name="stock">
 <option value="" selected disabled>選択してください</option>
-  <?php
+<?php
   for ($i = 1; $i <= 100; $i++) {
-    echo "<option value='$i'>$i</option>";
+    ?>
+    <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+    <?php
   }
   ?>
 </select><br>

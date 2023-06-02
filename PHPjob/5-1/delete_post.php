@@ -6,7 +6,7 @@ check_user_logged_in();
 $id = $_GET['id'];
 
 if (empty($id)) {
-    header("Location: main.php");
+    header("Location: bookList.php");
     exit;
 }
 $sql = "DELETE FROM books WHERE id = :id";

@@ -4,10 +4,10 @@ session_start();
 
 if (!empty($_POST)) {
     if (empty($_POST["name"])) {
-        echo "名前が未入力です。";
+        $error_message = "名前が未入力です。";
     }
     if (empty($_POST["pass"])) {
-        echo "パスワードが未入力です。";
+        $error_message = "パスワードが未入力です。";
     }
     if (!empty($_POST["name"]) && !empty($_POST["pass"])) {
         $name = htmlspecialchars($_POST['name'], ENT_QUOTES);
@@ -29,10 +29,10 @@ if (!empty($_POST)) {
               header("Location: bookList.php");
               exit;
           } else {
-              echo "パスワードに誤りがあります。";
+            $error_message = "パスワードに誤りがあります。";
           }
       } else {
-          echo "ユーザー名かパスワードに誤りがあります。";
+        $error_message = "ユーザー名かパスワードに誤りがあります。";
       }
   }
 }
@@ -52,5 +52,11 @@ if (!empty($_POST)) {
           <input type="text" name="pass" size="15" placeholder="パスワード"><br><br>
           <input type="submit" value="ログイン" class="submit-button">
       </form>
+      <?php
+// エラーメッセージの表示
+if (!empty($error_message)) {
+  echo "<p class='error-message'>$error_message</p>";
+}
+?>
   </body>
 </html>
